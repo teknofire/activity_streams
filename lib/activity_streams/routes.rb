@@ -18,7 +18,7 @@ class ActionController::Routing::RouteSet # :nodoc:
   end
 
   def activity_stream_maps(map) # :nodoc:
-    map.your_activities '/feeds/your_activities/:activity_stream_token', :controller => 'activity_streams', :action => 'feed', :format => 'atom'
+    map.your_activities '/feeds/:activity_stream_token', :controller => 'activity_streams', :action => 'feed', :format => 'atom'
     map.resources :activity_stream_preferences
     map.resources :activity_streams
   end
