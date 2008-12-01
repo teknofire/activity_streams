@@ -8,7 +8,7 @@
 <% end %>
 <span class='ActivityStreamVerb'><%= activity_stream.verb.tr('_', ' ') %></span>
 <% if activity_stream.object -%>
-  <%= link_to activity_stream.object_name, self.send("#{activity_stream.object.class.name.downcase}_path", activity_stream.object), :rel => 'bookmark', :class => 'object uri' %>
+  <%= link_to activity_stream.object_name, url_for(:controller => activity_stream.object.class.name.downcase, :action => :show, :id => activity_stream.object), :rel => 'bookmark', :class => 'object uri' %>
 <% else %>
   (deleted)
 <% end %>
